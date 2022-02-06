@@ -16,16 +16,11 @@ export const calcBranched = (x, a, b) => {
 export const calcCircular = (n, j, i) => {
   let left = 1;
   let right = 0;
-  let tempN = n;
-
-  while(tempN > 0) {
-    left *= factorial(j);
-    j++;
-    tempN--;
-  }
 
   while(n > 0) {
+    left *= factorial(j);
     right += factorial(i);
+    j++;
     i++;
     n--;
   }

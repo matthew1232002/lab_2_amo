@@ -6,6 +6,7 @@ import {AppField} from "../../components/AppField";
 import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
 import cycleImg from '/images/lab-1/cycle.png';
+import cycleSchemaImg from "../../../images/lab-1/cycle-schema.png";
 
 export const Circular = () => {
   const [result, setResult] = useState('...');
@@ -66,6 +67,10 @@ export const Circular = () => {
       </Formik>
 
       <p className="mt-2 text-lg">Останнє отримане значення <strong>f = {result}.</strong></p>
+
+      <hr className="mt-4"/>
+      <p className="text-lg mt-2">Блок-схема для завдання:</p>
+      <img src={cycleSchemaImg} alt="schema"/>
     </div>
   )
 }

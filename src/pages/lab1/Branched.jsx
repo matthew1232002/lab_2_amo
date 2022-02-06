@@ -6,6 +6,7 @@ import {AppField} from "../../components/AppField";
 import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
 import branchingImg from '/images/lab-1/branching.png';
+import branchingSchemaImg from "../../../images/lab-1/branching-schema.png";
 
 export const Branched = () => {
   const [result, setResult] = useState('...');
@@ -49,6 +50,10 @@ export const Branched = () => {
       </Formik>
 
       <p className="mt-2 text-lg">Останнє отримане значення <strong>y = {result}.</strong></p>
+
+      <hr className="mt-4"/>
+      <p className="text-lg mt-2">Блок-схема для завдання:</p>
+      <img src={branchingSchemaImg} alt="schema"/>
     </div>
   )
 }

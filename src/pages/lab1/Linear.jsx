@@ -6,6 +6,7 @@ import {AppButton} from "../../components/AppButton";
 import {AppFormGroup} from "../../components/AppFormGroup";
 import {AppLabel} from "../../components/AppLabel";
 import linearImg from '/images/lab-1/linear.png';
+import linearSchemaImg from '/images/lab-1/linear-schema.png';
 
 export const Linear = () => {
   const [result, setResult] = useState('...');
@@ -48,6 +49,10 @@ export const Linear = () => {
       </Formik>
 
       <p className="mt-2 text-lg">Останнє отримане значення <strong>Y1 = {result}.</strong></p>
+
+      <hr className="mt-4"/>
+      <p className="text-lg mt-2">Блок-схема для завдання:</p>
+      <img src={linearSchemaImg} alt="schema"/>
     </div>
   )
 }
