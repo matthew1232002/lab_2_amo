@@ -5,6 +5,7 @@ import {AppField} from "../../components/AppField";
 import {AppButton} from "../../components/AppButton";
 import {AppFormGroup} from "../../components/AppFormGroup";
 import {AppLabel} from "../../components/AppLabel";
+import linearImg from '/images/lab-1/linear.png';
 
 export const Linear = () => {
   const [result, setResult] = useState('...');
@@ -12,7 +13,7 @@ export const Linear = () => {
   return (
     <div>
       <p className="text-lg">Завдання:</p>
-      <img src="/images/lab-1/linear.png" alt="linear"/>
+      <img src={linearImg} alt="linear"/>
       <Formik
         initialValues={{
           b: '',

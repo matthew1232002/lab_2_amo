@@ -11,7 +11,7 @@ import {Circular} from "./pages/lab1/Circular";
 
 function App() {
   return (
-  <BrowserRouter>
+  <BrowserRouter basename={`/${import.meta.env.VITE_BASE_ROUTE}`}>
     <div className="flex">
       <Menu />
       <div className="p-12 w-full">

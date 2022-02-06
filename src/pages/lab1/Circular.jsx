@@ -5,13 +5,14 @@ import {AppLabel} from "../../components/AppLabel";
 import {AppField} from "../../components/AppField";
 import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
+import cycleImg from '/images/lab-1/cycle.png';
 
 export const Circular = () => {
   const [result, setResult] = useState('...');
   return (
     <div>
       <p className="text-lg">Завдання:</p>
-      <img src="/images/lab-1/cycle.png" alt="circular"/>
+      <img src={cycleImg} alt="circular"/>
 
       <Formik
         initialValues={{

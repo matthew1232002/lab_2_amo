@@ -5,13 +5,14 @@ import {AppLabel} from "../../components/AppLabel";
 import {AppField} from "../../components/AppField";
 import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
+import branchingImg from '/images/lab-1/branching.png';
 
 export const Branched = () => {
   const [result, setResult] = useState('...');
   return (
     <div>
       <p className="text-lg">Завдання:</p>
-      <img src="/images/lab-1/branching.png" alt="branched"/>
+      <img src={branchingImg} alt="branched"/>
 
       <Formik
         initialValues={{
