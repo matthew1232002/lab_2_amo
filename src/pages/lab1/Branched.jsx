@@ -7,53 +7,58 @@ import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
 import branchingImg from '/images/lab-1/branching.png';
 import branchingSchemaImg from "../../../images/lab-1/branching-schema.png";
+import linearSchemaImg from "../../../images/lab-1/linear-schema.png";
 
 export const Branched = () => {
   const [result, setResult] = useState('...');
   return (
-    <div>
-      <p className="text-lg">Завдання:</p>
-      <img src={branchingImg} alt="branched"/>
+    <div className="flex gap-10">
+      <div className="grow">
+        <p className="text-lg">Завдання:</p>
+        <img className="mt-2" src={branchingImg} alt="branched"/>
 
-      <Formik
-        initialValues={{
-          x: '',
-          a: '',
-          b: '',
-        }}
-        onSubmit={({ x, a, b }) => {
-          if(!b || !a || !x) {
-            return alert('Задано не валідні значення')
-          }
-          setResult(calcBranched(x, a, b));
-        }}
-      >
-        <Form className="border p-2">
-          <h2 className="text-center my-2 text-xl">Задайте значення у формі</h2>
-          <AppFormGroup>
-            <AppLabel htmlFor="x">Значення для x:</AppLabel>
-            <AppField id="x" name="x" placeholder="123..." type="number" />
-          </AppFormGroup>
+        <Formik
+          initialValues={{
+            x: '',
+            a: '',
+            b: '',
+          }}
+          onSubmit={({ x, a, b }) => {
+            if(!b || !a || !x) {
+              return alert('Задано не валідні значення')
+            }
+            setResult(calcBranched(x, a, b));
+          }}
+        >
+          <Form className="border p-2">
+            <h2 className="text-center my-2 text-xl">Задайте значення у формі</h2>
+            <AppFormGroup>
+              <AppLabel htmlFor="x">Значення для x:</AppLabel>
+              <AppField id="x" name="x" placeholder="123..." type="number" />
+            </AppFormGroup>
 
-          <AppFormGroup className="mt-4">
-            <AppLabel htmlFor="a">Значення a:</AppLabel>
-            <AppField id="a" name="a" placeholder="123..." type="number" />
-          </AppFormGroup>
+            <AppFormGroup className="mt-4">
+              <AppLabel htmlFor="a">Значення a:</AppLabel>
+              <AppField id="a" name="a" placeholder="123..." type="number" />
+            </AppFormGroup>
 
-          <AppFormGroup className="mt-4">
-            <AppLabel htmlFor="b">Значення b:</AppLabel>
-            <AppField id="b" name="b" placeholder="123..." type="number" />
-          </AppFormGroup>
+            <AppFormGroup className="mt-4">
+              <AppLabel htmlFor="b">Значення b:</AppLabel>
+              <AppField id="b" name="b" placeholder="123..." type="number" />
+            </AppFormGroup>
 
-          <AppButton className="mt-2" type="submit">Submit</AppButton>
-        </Form>
-      </Formik>
+            <AppButton className="mt-2" type="submit">Submit</AppButton>
+          </Form>
+        </Formik>
 
-      <p className="mt-2 text-lg">Останнє отримане значення <strong>y = {result}.</strong></p>
+        <p className="mt-2 text-lg">Останнє отримане значення <strong>y = {result}.</strong></p>
+      </div>
 
-      <hr className="mt-4"/>
-      <p className="text-lg mt-2">Блок-схема для завдання:</p>
-      <img src={branchingSchemaImg} alt="schema"/>
+
+      <div>
+        <h2 className="text-lg">Блок схема до завдання:</h2>
+        <img className="mt-2" src={branchingSchemaImg} alt="schema"/>
+      </div>
     </div>
   )
 }
