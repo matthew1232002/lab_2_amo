@@ -7,10 +7,26 @@ import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
 import branchingImg from '/images/lab-1/branching.png';
 import branchingSchemaImg from "../../../images/lab-1/branching-schema.png";
-import linearSchemaImg from "../../../images/lab-1/linear-schema.png";
 
 export const Branched = () => {
   const [result, setResult] = useState('...');
+  const [formValues, setFormValues] = useState({
+    x: '',
+    a: '',
+    b: '',
+  });
+
+  const uploadFile = (event) => {
+    const fileReader = new FileReader();
+    fileReader.onloadend = (e) => {
+      if (e.currentTarget.result) {
+        const values =  JSON.parse(e.currentTarget.result);
+        setFormValues(values);
+      }
+    };
+    fileReader.readAsText(event.target.files[0]);
+  }
+
   return (
     <div className="flex gap-10">
       <div className="grow">
@@ -18,11 +34,8 @@ export const Branched = () => {
         <img className="mt-2" src={branchingImg} alt="branched"/>
 
         <Formik
-          initialValues={{
-            x: '',
-            a: '',
-            b: '',
-          }}
+          enableReinitialize={true}
+          initialValues={formValues}
           onSubmit={({ x, a, b }) => {
             if(!b || !a || !x) {
               return alert('Задано не валідні значення')
@@ -50,6 +63,9 @@ export const Branched = () => {
             <AppButton className="mt-2" type="submit">Submit</AppButton>
           </Form>
         </Formik>
+        <div className="mt-5">
+          <input type="file" id="files" name="files[]" multiple onChange={uploadFile} />
+        </div>
 
         <p className="mt-2 text-lg">Останнє отримане значення <strong>y = {result}.</strong></p>
       </div>

@@ -2,7 +2,7 @@ import {Menu} from "./components/Menu";
 import {
   BrowserRouter,
   Routes,
-  Route,
+  Route, Navigate,
 } from 'react-router-dom';
 import {Lab1} from "./pages/lab1/Lab1";
 import {Linear} from "./pages/lab1/Linear";
@@ -21,10 +21,11 @@ function App() {
             <Route path="branched" element={<Branched />} />
             <Route path="circular" element={<Circular />} />
           </Route>
-          <Route path="/lab-2" element={<Lab1 />} />
-          <Route path="/lab-3" element={<Lab1 />} />
-          <Route path="/lab-4" element={<Lab1 />} />
-          <Route path="/lab-5" element={<Lab1 />} />
+          <Route path="/lab-2" element={null} />
+          <Route path="/lab-3" element={null} />
+          <Route path="/lab-4" element={null} />
+          <Route path="/lab-5" element={null} />
+          <Route path="*" element={<Navigate to="/lab-1" replace />} />
         </Routes>
       </div>
     </div>
