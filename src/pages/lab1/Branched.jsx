@@ -7,6 +7,7 @@ import {AppButton} from "../../components/AppButton";
 import {useState} from "react";
 import branchingImg from '/images/lab-1/branching.png';
 import branchingSchemaImg from "../../../images/lab-1/branching-schema.png";
+import {readFile} from "../../utils/uploadFile";
 
 export const Branched = () => {
   const [result, setResult] = useState('...');
@@ -64,7 +65,7 @@ export const Branched = () => {
           </Form>
         </Formik>
         <div className="mt-5">
-          <input type="file" id="files" name="files[]" multiple onChange={uploadFile} />
+          <input type="file" id="files" name="files[]" multiple onChange={(e) => readFile(e, setFormValues)} />
         </div>
 
         <p className="mt-2 text-lg">Останнє отримане значення <strong>y = {result}.</strong></p>
