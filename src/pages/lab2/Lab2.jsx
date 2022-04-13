@@ -19,7 +19,7 @@ export const Lab2 = () => {
         <h1 className="text-center font-bold text-xl">Лабораторна робота № 2</h1>
 
         <p className="mt-2"><strong>Тема:</strong> «Обчислювальна складність алгоритмів сортування».</p>
-        <p className="mt-2"><strong>Варіант №8</strong></p>
+        <p className="mt-2"><strong>Варіант №18</strong></p>
 
         <div className="mt-4">
           <p className="text-lg">Завдання:</p>
@@ -59,7 +59,7 @@ export const Lab2 = () => {
         {
           !!result.length &&
           <div className="flex items-center flex-col mt-2">
-            <h2 className="text-lg">Останнє отримане значення завдяки пірамідальному сортуванню: </h2>
+            <h2 className="text-lg">Останнє отримане значення завдяки сортуванню підрахунком: </h2>
             <code
               className="bg-blue-100 p-2 mt-2"
               style={{ display: 'inline-block', width: '500px', 'word-wrap': 'break-word' }}
@@ -72,15 +72,6 @@ export const Lab2 = () => {
         <div className="flex items-center flex-col mt-2">
           <h2 className="text-lg">Блок схема алгоритму</h2>
           <img className="mt-2" src={schemaImg} alt="schema"/>
-        </div>
-        <div className="text-sm mt-2">
-          <p><span className="font-bold">*</span> Heapify - procedure that rearranges the elements in the array, so its tree representation is a max heap.</p>
-          <p>
-            <span className="font-bold">**</span> Sift down is a routine that sinks the current element to its correct place.
-            This is used when we arrange our array to a correct max heap.
-            In "heapify", when we find that a child is bigger than its parent we swap their places.
-            In this situation it is likely that the smaller element needs to go down even further and that is exactly what "sift down" does.
-          </p>
         </div>
       </div>
     </div>

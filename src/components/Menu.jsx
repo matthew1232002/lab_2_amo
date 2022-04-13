@@ -3,10 +3,6 @@ import {AppLink} from "./AppLink";
 
 const LINKS = [
   {
-    to: '/lab-1',
-    text: 'Лабораторна робота №1'
-  },
-  {
     to: '/lab-2',
     text: 'Лабораторна робота №2'
   },
