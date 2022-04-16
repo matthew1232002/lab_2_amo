@@ -17,7 +17,7 @@ function App() {
           <Route path="/lab-3" element={null} />
           <Route path="/lab-4" element={null} />
           <Route path="/lab-5" element={null} />
-          <Route path="*" element={<Navigate to="/lab-1" replace />} />
+          <Route path="*" element={<Navigate to="/lab-2" replace />} />
         </Routes>
       </div>
     </div>
